@@ -22,6 +22,7 @@
   <string name="description_overview">Oversigt</string>
   <string name="description_poster">Vis plakat</string>
   <string name="description_image">Episode billede</string>
+  <string name="description_menu_overflow">More options</string>
   <string name="clear">Slet</string>
   <string name="discard">Kassér</string>
   <string name="save_selection">Gem markering</string>
@@ -31,6 +32,7 @@
   <string name="clear_search_history">Ryd søgehistorik</string>
   <string name="search_hint">Søg episoder</string>
   <string name="search_within_show">Søg indenfor %s</string>
+  <string name="any_language">Any language</string>
   <string name="updated">Opdateret til nyeste version.</string>
   <string name="norating">ikke tilgængelig</string>
   <string name="unknown">Ukendt</string>
@@ -72,6 +74,7 @@
   <string name="lastEdit">Sidste redigering / / TVDb</string>
   <string name="services_watch">Se</string>
   <string name="services_more">Mere</string>
+  <string name="no_translation">There is no description translated to %1$s available at %2$s.</string>
   <string name="today">i dag</string>
   <string name="now">Nu</string>
   <string name="daily">Daglig</string>
@@ -145,6 +148,8 @@
   <string name="checkin_searchhint">Skriv et serienavn</string>
   <string name="add_empty">Der er ingen serier her.</string>
   <string name="no_results">Ingen resultater, prøv komplette ord.</string>
+  <string name="action_try_any_language">Try any language</string>
+  <string name="action_try_again">Try again</string>
   <string name="search_error">Søgning mislykkedes, prøv igen senere.</string>
   <string name="add_all">Tilføj alle</string>
   <string name="add_multiple">Alle serier vil blive vist i din liste om lidt.</string>
@@ -152,7 +157,8 @@
   <string name="add_error">Kunne ikke tilføje %s.</string>
   <string name="add_already_exists">%s er allerede i din serieliste.</string>
   <string name="recommended">Anbefalet</string>
-  <string name="library">Bibliotek</string>
+  <string name="watched_shows">Watched</string>
+  <string name="shows_collection">Samling</string>
   <string name="watchlist">Overvågningsliste</string>
   <string name="first_list">Første liste</string>
   <string name="list_add">Tilføj liste</string>
@@ -171,7 +177,6 @@
   <string name="watchlist_added">Tilføjet til overvågningsliste</string>
   <string name="watchlist_removed">Fjernet fra overvågningsliste</string>
   <string name="movies_search_hint">Skriv en filmtitel</string>
-  <string name="movies_empty">Søg efter en film ovenfor.</string>
   <string name="movies_collection_empty">Du har ikke tilføjet film til din samling.</string>
   <string name="movies_watchlist_empty">Du har ikke tilføjet film til din overvågningsliste.</string>
   <string name="trailer">Trailer</string>
@@ -190,29 +195,29 @@
   <string name="movies_on_watchlist">%s på overvågningslisten</string>
   <string name="runtime_movies_watchlist">Varig af film på overvågningslisten</string>
   <plurals name="days_plural">
-    <item quantity="one">%d dag</item>
-    <item quantity="zero">%d dage</item>
-    <item quantity="two">%d dage</item>
-    <item quantity="few">%d dage</item>
-    <item quantity="many">%d dage</item>
-    <item quantity="other">%d dage</item>
-  </plurals>
+        <item quantity="one">%d dag</item>
+        <item quantity="zero">%d dage</item>
+        <item quantity="two">%d dage</item>
+        <item quantity="few">%d dage</item>
+        <item quantity="many">%d dage</item>
+        <item quantity="other">%d dage</item>
+    </plurals>
   <plurals name="hours_plural">
-    <item quantity="zero">%d timer</item>
-    <item quantity="one">%d time</item>
-    <item quantity="two">%d timer</item>
-    <item quantity="few">%d timer</item>
-    <item quantity="many">%d timer</item>
-    <item quantity="other">%d timer</item>
-  </plurals>
+        <item quantity="zero">%d timer</item>
+        <item quantity="one">%d time</item>
+        <item quantity="two">%d timer</item>
+        <item quantity="few">%d timer</item>
+        <item quantity="many">%d timer</item>
+        <item quantity="other">%d timer</item>
+    </plurals>
   <plurals name="minutes_plural">
-    <item quantity="zero">%d minutter</item>
-    <item quantity="one">%d minut</item>
-    <item quantity="two">%d minutter</item>
-    <item quantity="few">%d minutter</item>
-    <item quantity="many">%d minutter</item>
-    <item quantity="other">%d minutter</item>
-  </plurals>
+        <item quantity="zero">%d minutter</item>
+        <item quantity="one">%d minut</item>
+        <item quantity="two">%d minutter</item>
+        <item quantity="few">%d minutter</item>
+        <item quantity="many">%d minutter</item>
+        <item quantity="other">%d minutter</item>
+    </plurals>
   <string name="hexagon_warning">Eksperimentel!</string>
   <string name="hexagon_setup">Opsæt SeriesGuide Cloud</string>
   <string name="hexagon_description">Tilslut til skyen for at sikkerhedskopiere og synkronisere dine film og serier.</string>
@@ -238,13 +243,14 @@
   <string name="trakt_notcollected">%s ikke samlet.</string>
   <string name="checkin_success_trakt">Tjekket ind på %s på trakt.</string>
   <string name="checkin_canceled_success_trakt">Afbrudt indtjekning på trakt.</string>
-  <string name="checkin_error_not_exists">Element (endnu) ikke fundet på trakt. Prøv igen senere.</string>
   <string name="traktcheckin_cancel">Overskriv</string>
   <string name="traktcheckin_inprogress">Du er allerede tjekket ind på en anden episode eller film. Overskriv den foregående indtjekning eller vent %s og prøv igen.</string>
   <string name="traktcheckin_wait">Jeg venter</string>
   <string name="trakt_success">Sendt til trakt.</string>
   <string name="trakt_error_credentials">Noget gik galt. Kontroller venligt dine legitimationsoplysninger og prøv igen.</string>
   <string name="trakt_error_general">Kunne ikke kommunikere med trakt. Prøv igen senere.</string>
+  <string name="trakt_error_not_exists">Not (yet) available on trakt. Try again later.</string>
+  <string name="trakt_notice_not_exists">Can not (yet) be tracked with trakt.</string>
   <string name="trakt_account">trakt konto</string>
   <string name="trakt_connect_instructions">På den næste skærm log ind på trakt eller opret en ny konto, derefter lad SeriesGuide få adgang til din trakt konto.</string>
   <string name="connect_trakt">Forbind til trakt</string>
@@ -254,6 +260,7 @@
   <string name="waitplease">Vent et øjeblik</string>
   <string name="connect">Tilslut</string>
   <string name="disconnect">Afbryd</string>
+  <string name="use_integrated_browser">Use integrated browser</string>
   <string name="connect_trakt_done">Forbundet til trakt!</string>
   <string name="connect_trakt_done_explanation">SeriesGuide vil nu synkronisere serier og film på denne enhed med trakt. Dette kan tage noget tid.</string>
   <string name="add_trakt_shows">Tilføj serier fra dit bibliotek:</string>
@@ -272,16 +279,18 @@
   <string name="rating8">Fantastisk</string>
   <string name="rating9">Fremragende</string>
   <plurals name="votes">
-    <item quantity="zero">%d stemmer</item>
-    <item quantity="one">%d afstemning</item>
-    <item quantity="two">%d stemmer</item>
-    <item quantity="few">%d stemmer</item>
-    <item quantity="many">%d stemmer</item>
-    <item quantity="other">%d stemmer</item>
-  </plurals>
+        <item quantity="zero">%d stemmer</item>
+        <item quantity="one">%d afstemning</item>
+        <item quantity="two">%d stemmer</item>
+        <item quantity="few">%d stemmer</item>
+        <item quantity="many">%d stemmer</item>
+        <item quantity="other">%d stemmer</item>
+    </plurals>
   <string name="checkin">Tjek ind</string>
   <string name="checkin_hint">Skriv en besked (valgfrit)</string>
   <string name="paste_title">Indsæt titel</string>
+  <string name="pref_quick_checkin">Quick check in</string>
+  <string name="pref_quick_checkin_summary">Do not ask for a check in message</string>
   <string name="feedback">Send feedback</string>
   <string name="action_open_in_browser">Åben i browser</string>
   <string name="prefs_category_basic">Grundlæggende</string>

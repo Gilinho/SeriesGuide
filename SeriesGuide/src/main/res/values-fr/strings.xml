@@ -8,7 +8,7 @@
   <string name="search">Rechercher</string>
   <string name="preferences">Paramètres</string>
   <string name="help">Aide</string>
-  <string name="help_and_feedback">Help &amp; Feedback</string>
+  <string name="help_and_feedback">Aide &amp; commentaire</string>
   <string name="drawer_open">Ouvrir le tiroir de navigation</string>
   <string name="drawer_close">Fermer le tiroir de navigation</string>
   <string name="show">Série</string>
@@ -22,6 +22,7 @@
   <string name="description_overview">Aperçu</string>
   <string name="description_poster">Affiche de la série</string>
   <string name="description_image">Image de l\'épisode</string>
+  <string name="description_menu_overflow">More options</string>
   <string name="clear">Effacer</string>
   <string name="discard">Annuler</string>
   <string name="save_selection">Enregistrer</string>
@@ -31,6 +32,7 @@
   <string name="clear_search_history">Effacer l\'historique de recherche</string>
   <string name="search_hint">Recherche d\'épisodes</string>
   <string name="search_within_show">Chercher dans %s</string>
+  <string name="any_language">N\'importe quelle langue</string>
   <string name="updated">Mis à jour avec la version la plus récente.</string>
   <string name="norating">s/o</string>
   <string name="unknown">inconnu</string>
@@ -72,6 +74,7 @@
   <string name="lastEdit">Dernière modification // TVDb</string>
   <string name="services_watch">Regarder</string>
   <string name="services_more">Plus</string>
+  <string name="no_translation">La traduction en %1$s n\'est pas disponible sur %2$s.</string>
   <string name="today">aujourd\'hui</string>
   <string name="now">maintenant</string>
   <string name="daily">Quotidiennement</string>
@@ -145,6 +148,8 @@
   <string name="checkin_searchhint">Entrez un nom de série</string>
   <string name="add_empty">Il n\'y a aucune série ici.</string>
   <string name="no_results">Pas de résultats, reformulez votre requête.</string>
+  <string name="action_try_any_language">Essayer n\'importe quelle langue</string>
+  <string name="action_try_again">Réessayer</string>
   <string name="search_error">Recherche échouée, réessayez plus tard.</string>
   <string name="add_all">Tout ajouter</string>
   <string name="add_multiple">Toutes les séries apparaîtront dans votre liste sous peu.</string>
@@ -152,7 +157,8 @@
   <string name="add_error">Impossible d\'ajouter %s.</string>
   <string name="add_already_exists">%s est déjà dans votre liste de séries.</string>
   <string name="recommended">Recommandé</string>
-  <string name="library">Bibliothèque</string>
+  <string name="watched_shows">Vu</string>
+  <string name="shows_collection">Collection</string>
   <string name="watchlist">Liste à voir</string>
   <string name="first_list">Première liste</string>
   <string name="list_add">Ajouter une liste</string>
@@ -171,7 +177,6 @@
   <string name="watchlist_added">Ajouté dans la liste à voir</string>
   <string name="watchlist_removed">Retiré de la liste à voir</string>
   <string name="movies_search_hint">Entrez le titre du film</string>
-  <string name="movies_empty">Recherchez un film ci-dessus.</string>
   <string name="movies_collection_empty">Vous n\'avez pas ajouté de films dans votre collection.</string>
   <string name="movies_watchlist_empty">Vous n\'avez pas ajouté de films dans votre liste à voir.</string>
   <string name="trailer">Bande-annonce</string>
@@ -190,29 +195,29 @@
   <string name="movies_on_watchlist">%s dans la liste à voir</string>
   <string name="runtime_movies_watchlist">Durée totale des films dans la liste à voir</string>
   <plurals name="days_plural">
-    <item quantity="one">%d jour</item>
-    <item quantity="zero">%d jours</item>
-    <item quantity="two">%d jours</item>
-    <item quantity="few">%d jours</item>
-    <item quantity="many">%d jours</item>
-    <item quantity="other">%d jours</item>
-  </plurals>
+        <item quantity="one">%d jour</item>
+        <item quantity="zero">%d jours</item>
+        <item quantity="two">%d jours</item>
+        <item quantity="few">%d jours</item>
+        <item quantity="many">%d jours</item>
+        <item quantity="other">%d jours</item>
+    </plurals>
   <plurals name="hours_plural">
-    <item quantity="zero">%d heures</item>
-    <item quantity="one">%d heure</item>
-    <item quantity="two">%d heures</item>
-    <item quantity="few">%d heures</item>
-    <item quantity="many">%d heures</item>
-    <item quantity="other">%d heures</item>
-  </plurals>
+        <item quantity="zero">%d heures</item>
+        <item quantity="one">%d heure</item>
+        <item quantity="two">%d heures</item>
+        <item quantity="few">%d heures</item>
+        <item quantity="many">%d heures</item>
+        <item quantity="other">%d heures</item>
+    </plurals>
   <plurals name="minutes_plural">
-    <item quantity="zero">%d minute</item>
-    <item quantity="one">%d minute</item>
-    <item quantity="two">%d minutes</item>
-    <item quantity="few">%d minutes</item>
-    <item quantity="many">%d minutes</item>
-    <item quantity="other">%d minutes</item>
-  </plurals>
+        <item quantity="zero">%d minute</item>
+        <item quantity="one">%d minute</item>
+        <item quantity="two">%d minutes</item>
+        <item quantity="few">%d minutes</item>
+        <item quantity="many">%d minutes</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
   <string name="hexagon_warning">Expérimental !</string>
   <string name="hexagon_setup">Configurer le cloud SeriesGuide</string>
   <string name="hexagon_description">Connectez vous au cloud pour sauvegarder et synchroniser vos séries et films.</string>
@@ -229,8 +234,8 @@
   <string name="hexagon_remove_account_confirmation">Retirer votre compte supprimera tous les films et séries se trouvant sur le cloud SeriesGuide. Assurez-vous de le retirer également sur vos autres appareils connectés.</string>
   <string name="hexagon_api_error">Impossible de communiquer avec SeriesGuide Cloud. Réessayez plus tard.</string>
   <string name="hexagon_api_queued">Envoi vers SeriesGuide Cloud.</string>
-  <string name="hexagon_permission_missing">To use SeriesGuide Cloud, allow access to your accounts.</string>
-  <string name="hexagon_google_play_missing">To use SeriesGuide Cloud, Google Play Services are required.</string>
+  <string name="hexagon_permission_missing">Pour utiliser SeriesGuide Cloud, autoriser l’accès à vos comptes.</string>
+  <string name="hexagon_google_play_missing">Pour utiliser SeriesGuide Cloud les Services Google Play sont nécessaires.</string>
   <string name="trakt_submitqueued">Envoi vers trakt.</string>
   <string name="trakt_seen">%s vu.</string>
   <string name="trakt_notseen">%s non vu.</string>
@@ -238,13 +243,14 @@
   <string name="trakt_notcollected">%s n\'est pas dans votre collection.</string>
   <string name="checkin_success_trakt">Check-in de %s sur trakt effectué.</string>
   <string name="checkin_canceled_success_trakt">Check-in sur trakt annulé.</string>
-  <string name="checkin_error_not_exists">Article pas (encore) trouvé sur trakt. Réessayez plus tard.</string>
   <string name="traktcheckin_cancel">Annuler</string>
   <string name="traktcheckin_inprogress">Vous regardez déjà autre chose. Vous pouvez soit annuler le précédent check-in, soit attendre %s puis réessayer.</string>
   <string name="traktcheckin_wait">J\'attends</string>
   <string name="trakt_success">Envoyé à trakt.</string>
   <string name="trakt_error_credentials">Un problème est survenu. Merci de vérifier vos identifiants et d\'essayer de nouveau.</string>
   <string name="trakt_error_general">Impossible de communiquer avec trakt. Réessayez ultérieurement.</string>
+  <string name="trakt_error_not_exists">Pas (encore) disponible sur trakt. Réessayez plus tard.</string>
+  <string name="trakt_notice_not_exists">Ne peut pas (encore) être suivis avec trakt.</string>
   <string name="trakt_account">Compte trakt</string>
   <string name="trakt_connect_instructions">Sur le prochain écran connectez vous dans trakt ou créez un nouveau compte. Puis permettez l\'accès à votre compte trakt par SeriesGuide.</string>
   <string name="connect_trakt">Me connecter à trakt</string>
@@ -254,6 +260,7 @@
   <string name="waitplease">Veuillez patienter…</string>
   <string name="connect">Se connecter</string>
   <string name="disconnect">Se déconnecter</string>
+  <string name="use_integrated_browser">Utiliser le navigateur intégré</string>
   <string name="connect_trakt_done">Connecté à trakt !</string>
   <string name="connect_trakt_done_explanation">SeriesGuide va maintenant synchroniser les séries et les films sur cet appareil. Cela peut prendre un peu de temps.</string>
   <string name="add_trakt_shows">Ajoutez les séries de votre bibliothèque :</string>
@@ -272,16 +279,18 @@
   <string name="rating8">Très bon</string>
   <string name="rating9">Excellent</string>
   <plurals name="votes">
-    <item quantity="zero">%d votes</item>
-    <item quantity="one">%d vote</item>
-    <item quantity="two">%d votes</item>
-    <item quantity="few">%d votes</item>
-    <item quantity="many">%d votes</item>
-    <item quantity="other">%d votes</item>
-  </plurals>
+        <item quantity="zero">%d votes</item>
+        <item quantity="one">%d vote</item>
+        <item quantity="two">%d votes</item>
+        <item quantity="few">%d votes</item>
+        <item quantity="many">%d votes</item>
+        <item quantity="other">%d votes</item>
+    </plurals>
   <string name="checkin">Check-in</string>
   <string name="checkin_hint">Écrivez un message (optionnel)</string>
   <string name="paste_title">Ajouter le titre</string>
+  <string name="pref_quick_checkin">Check-in rapide</string>
+  <string name="pref_quick_checkin_summary">Ne plus demander de message pour le Check in</string>
   <string name="feedback">Envoyez vos commentaires</string>
   <string name="action_open_in_browser">Ouvrir dans le navigateur</string>
   <string name="prefs_category_basic">Paramètres de base</string>
@@ -294,7 +303,7 @@
   <string name="pref_onlyseasonepssummary">Les épisodes spéciaux n\'apparaissent plus excepté dans la liste des saisons</string>
   <string name="pref_seasonsorting">Trier les saisons par…</string>
   <string name="pref_episodesorting">Trier les épisodes par…</string>
-  <string name="pref_language">Preferred content language</string>
+  <string name="pref_language">Langue préférée pour le contenu</string>
   <string name="pref_updatewifionly">Images uniquement via Wi-Fi</string>
   <string name="pref_updatewifionlysummary">Pour réduire les frais de consommation de données, ne pas les télécharger via un réseau mobile</string>
   <string name="about">A propos de SeriesGuide</string>
@@ -304,8 +313,8 @@
   <string name="licence_tvdb">Cette application utilise des données et images provenant de TheTVDB sous license CC BY-NC 4.0.</string>
   <string name="licence_themoviedb">Ce produit utilise l\'API TMDb mais n\'est pas approuvé ou certifié par TMDb.</string>
   <string name="licence_trakt">Cette application utilise des données et images provenant de trakt.</string>
-  <string name="about_open_source">SeriesGuide is built using open source software.</string>
-  <string name="licences_and_credits">Licences and credits</string>
+  <string name="about_open_source">SeriesGuide est construit en utilisant des logiciels open source.</string>
+  <string name="licences_and_credits">Licences et crédits</string>
   <string name="sort">Trier par</string>
   <string name="action_sort_ignore_articles">Ignorer les articles</string>
   <string name="sort_order_latest_first">Plus récentes en premier</string>
@@ -315,7 +324,7 @@
   <string name="sort_order_top_rated_first">Les mieux notés</string>
   <string name="sort_order_latest_first_dvd">Plus récents en premier (DVD)</string>
   <string name="sort_order_oldest_first_dvd">Plus ancien en premier (DVD)</string>
-  <string name="pref_upcominglimit">Upcoming range</string>
+  <string name="pref_upcominglimit">Période pour l\'affichage "à venir"</string>
   <string name="upcoming_upto_now">maintenant</string>
   <string name="upcoming_upto_one_day">un jour</string>
   <string name="upcoming_upto_three_days">3 jours</string>
@@ -330,8 +339,8 @@
   <string name="pref_other">Autres</string>
   <string name="pref_autoupdate">Activer la mise à jour automatique</string>
   <string name="pref_autoupdatesummary">Mise à jour périodique de vos séries</string>
-  <string name="pref_autobackup">Auto Backup</string>
-  <string name="pref_autobackupsummary">Weekly backup of your shows, lists and movies</string>
+  <string name="pref_autobackup">Sauvegarde automatique</string>
+  <string name="pref_autobackupsummary">Sauvegarde hebdomadaire de vos émissions, vos listes et vos films</string>
   <string name="backup">Sauvegarde/Restauration</string>
   <string name="backup_summary">Sauvegarder ou restaurer vos séries</string>
   <string name="pref_number">Format de nombre</string>
@@ -343,7 +352,7 @@
   <string name="backup_full_dump">Inclure toutes les métadonnées telles que les descriptions, les acteurs et les notes.</string>
   <string name="backup_path">Dossier de sauvegarde</string>
   <string name="backup_version">Version de la base de données</string>
-  <string name="backup_failed_file_access">Can\'t backup. A backup file can not be found or accessed.</string>
+  <string name="backup_failed_file_access">Impossible de sauvegarder. Un fichier de sauvegarde ne peut pas être trouvé ou consulté.</string>
   <string name="backup_inprogress">Sauvegarde de la base de données…</string>
   <string name="backup_success">Sauvegarde réussie.</string>
   <string name="backup_failed">Sauvegarde échouée.</string>
@@ -358,15 +367,15 @@
   <string name="import_button">Restaurer</string>
   <string name="backup_question">Ceci va écraser les fichiers de sauvegarde déjà présent dans le répertoire!</string>
   <string name="import_question">La liste de séries actuelles sera perdue! Assurez-vous que le fichier de sauvegarde est bien dans le répertoire.</string>
-  <string name="import_warning">I understand my current shows, lists and movies will be replaced!</string>
+  <string name="import_warning">Je comprends que mes séries, listes et films actuels seront remplacés !</string>
   <string name="last_auto_backup">Dernière sauvegarde auto : %s</string>
   <string name="restore_auto_backup">Restaurer la sauvegarde automatique</string>
-  <string name="dataliberation_permission_missing">To backup or restore, allow access to your files.</string>
-  <string name="autobackup_permission_missing">To use auto backup, allow access to your files.</string>
-  <string name="autobackup_files_missing">To use auto backup, select valid backup files.</string>
-  <string name="no_file_selected">No file selected</string>
-  <string name="action_select_file">Select file</string>
-  <string name="backup_use_default_files">Use default backup files</string>
+  <string name="dataliberation_permission_missing">Pour sauvegarder ou restaurer, permettez l’accès à vos fichiers.</string>
+  <string name="autobackup_permission_missing">Pour utiliser la sauvegarde automatique, permettez l’accès à vos fichiers.</string>
+  <string name="autobackup_files_missing">Pour utiliser la sauvegarde automatique, sélectionnez un fichier de sauvegarde valides.</string>
+  <string name="no_file_selected">Aucun fichier sélectionné</string>
+  <string name="action_select_file">Choisir un fichier</string>
+  <string name="backup_use_default_files">Utiliser le fichier de sauvegarde par défaut</string>
   <string name="get_started">Commencer</string>
   <string name="welcome_setuplanguage">Choisissez la langue</string>
   <string name="dismiss">Passer</string>

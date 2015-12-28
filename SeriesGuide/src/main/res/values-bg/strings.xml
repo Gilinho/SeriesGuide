@@ -22,6 +22,7 @@
   <string name="description_overview">Общ преглед</string>
   <string name="description_poster">Обложка</string>
   <string name="description_image">Снимкa нa епизодa</string>
+  <string name="description_menu_overflow">More options</string>
   <string name="clear">Изчисти</string>
   <string name="discard">Откажи</string>
   <string name="save_selection">Запази избраните</string>
@@ -31,6 +32,7 @@
   <string name="clear_search_history">Изчисти историята на търсене</string>
   <string name="search_hint">Търсене на епизоди</string>
   <string name="search_within_show">Търси в %s</string>
+  <string name="any_language">Any language</string>
   <string name="updated">Актуализиран до последна версия.</string>
   <string name="norating">няма</string>
   <string name="unknown">неизвестен</string>
@@ -72,6 +74,7 @@
   <string name="lastEdit">Последна промяна // TVDb</string>
   <string name="services_watch">Гледайте</string>
   <string name="services_more">Още</string>
+  <string name="no_translation">There is no description translated to %1$s available at %2$s.</string>
   <string name="today">днес</string>
   <string name="now">сега</string>
   <string name="daily">Ежедневно</string>
@@ -145,6 +148,8 @@
   <string name="checkin_searchhint">Въведете име на сериала</string>
   <string name="add_empty">Няма ТВ предавания.</string>
   <string name="no_results">Няма резултати, опитайте търсене с цели думи.</string>
+  <string name="action_try_any_language">Try any language</string>
+  <string name="action_try_again">Try again</string>
   <string name="search_error">Търсенето е неуспешно, опитайте отново по-късно.</string>
   <string name="add_all">Добави всички</string>
   <string name="add_multiple">Всички сериали ще се появят в списъка ви скоро.</string>
@@ -152,7 +157,8 @@
   <string name="add_error">Неуспешно добавяне на %s.</string>
   <string name="add_already_exists">%s вече е в списъка със сериали.</string>
   <string name="recommended">Препоръчани</string>
-  <string name="library">Библиотека</string>
+  <string name="watched_shows">Watched</string>
+  <string name="shows_collection">Колекция</string>
   <string name="watchlist">Списък за гледане</string>
   <string name="first_list">Първи списък</string>
   <string name="list_add">Добави списък</string>
@@ -171,7 +177,6 @@
   <string name="watchlist_added">Добавено към списъка за гледане</string>
   <string name="watchlist_removed">Премахното от списъка за гледане</string>
   <string name="movies_search_hint">Въведете заглавие на филм</string>
-  <string name="movies_empty">Търси филм по-горе.</string>
   <string name="movies_collection_empty">Не сте добавили филми към вашата колекция.</string>
   <string name="movies_watchlist_empty">Не сте добавили филми във вашия списък за гледане.</string>
   <string name="trailer">Трейлър</string>
@@ -190,29 +195,29 @@
   <string name="movies_on_watchlist">%s в плейлистата</string>
   <string name="runtime_movies_watchlist">Обща продължителност на гледаните филми</string>
   <plurals name="days_plural">
-    <item quantity="one">%d ден</item>
-    <item quantity="zero">%d дни</item>
-    <item quantity="two">%d дни</item>
-    <item quantity="few">%d дни</item>
-    <item quantity="many">%d дни</item>
-    <item quantity="other">%d дни</item>
-  </plurals>
+        <item quantity="one">%d ден</item>
+        <item quantity="zero">%d дни</item>
+        <item quantity="two">%d дни</item>
+        <item quantity="few">%d дни</item>
+        <item quantity="many">%d дни</item>
+        <item quantity="other">%d дни</item>
+    </plurals>
   <plurals name="hours_plural">
-    <item quantity="zero">%d часа</item>
-    <item quantity="one">%d час</item>
-    <item quantity="two">%d часа</item>
-    <item quantity="few">%d часа</item>
-    <item quantity="many">%d часа</item>
-    <item quantity="other">%d часа</item>
-  </plurals>
+        <item quantity="zero">%d часа</item>
+        <item quantity="one">%d час</item>
+        <item quantity="two">%d часа</item>
+        <item quantity="few">%d часа</item>
+        <item quantity="many">%d часа</item>
+        <item quantity="other">%d часа</item>
+    </plurals>
   <plurals name="minutes_plural">
-    <item quantity="zero">%d минути</item>
-    <item quantity="one">%d минута</item>
-    <item quantity="two">%d минути</item>
-    <item quantity="few">%d минути</item>
-    <item quantity="many">%d минути</item>
-    <item quantity="other">%d минути</item>
-  </plurals>
+        <item quantity="zero">%d минути</item>
+        <item quantity="one">%d минута</item>
+        <item quantity="two">%d минути</item>
+        <item quantity="few">%d минути</item>
+        <item quantity="many">%d минути</item>
+        <item quantity="other">%d минути</item>
+    </plurals>
   <string name="hexagon_warning">Експериментално!</string>
   <string name="hexagon_setup">Създаване на SeriesGuide облак</string>
   <string name="hexagon_description">Свързване с облака за архивиране и синхронизиране на предаванията и филмите ти.</string>
@@ -238,13 +243,14 @@
   <string name="trakt_notcollected">%s не са в колекция.</string>
   <string name="checkin_success_trakt">Отметнато %s в trakt.</string>
   <string name="checkin_canceled_success_trakt">Отменяне на отмятането в trakt.</string>
-  <string name="checkin_error_not_exists">Ненамерено (все още) в trakt. Опитайте отново по-късно.</string>
   <string name="traktcheckin_cancel">Замени</string>
   <string name="traktcheckin_inprogress">Вие вече отметнахте друг епизод или филм. Или заместете предишното отмятане или изчакайте %s и опитайте отново.</string>
   <string name="traktcheckin_wait">Ще изчакам</string>
   <string name="trakt_success">Изпратено към trakt.</string>
   <string name="trakt_error_credentials">Нещо се обърка. Проверете идентификационните си данни и опитайте отново.</string>
   <string name="trakt_error_general">Няма връзка с trakt. Опитайте отново по-късно.</string>
+  <string name="trakt_error_not_exists">Not (yet) available on trakt. Try again later.</string>
+  <string name="trakt_notice_not_exists">Can not (yet) be tracked with trakt.</string>
   <string name="trakt_account">trakt профил</string>
   <string name="trakt_connect_instructions">На следващия екран влезте в trakt или си създайте профил. След това разрешете на SeriesGuide достъп до профила ви в trakt.</string>
   <string name="connect_trakt">Свържете се с trakt</string>
@@ -254,6 +260,7 @@
   <string name="waitplease">Един момент, моля...</string>
   <string name="connect">Свързване</string>
   <string name="disconnect">Прекъсване на връзката</string>
+  <string name="use_integrated_browser">Use integrated browser</string>
   <string name="connect_trakt_done">Свързани сте с trakt!</string>
   <string name="connect_trakt_done_explanation">SeriesGuide ще синхронизира сериалите и филмите на това устройство с trakt. Това може да отнеме известно време.</string>
   <string name="add_trakt_shows">Добавете още сериали от вашата trakt библиотека:</string>
@@ -272,16 +279,18 @@
   <string name="rating8">Страхотен</string>
   <string name="rating9">Превъзходен</string>
   <plurals name="votes">
-    <item quantity="zero">%d гласа</item>
-    <item quantity="one">%d оценка</item>
-    <item quantity="two">%d гласа</item>
-    <item quantity="few">%d гласа</item>
-    <item quantity="many">%d гласове</item>
-    <item quantity="other">%d оценки</item>
-  </plurals>
+        <item quantity="zero">%d гласа</item>
+        <item quantity="one">%d оценка</item>
+        <item quantity="two">%d гласа</item>
+        <item quantity="few">%d гласа</item>
+        <item quantity="many">%d гласове</item>
+        <item quantity="other">%d оценки</item>
+    </plurals>
   <string name="checkin">Гледано</string>
   <string name="checkin_hint">Напиши съобщение (по избор)</string>
   <string name="paste_title">Поставете заглавие</string>
+  <string name="pref_quick_checkin">Quick check in</string>
+  <string name="pref_quick_checkin_summary">Do not ask for a check in message</string>
   <string name="feedback">Обратна връзка</string>
   <string name="action_open_in_browser">Отвори в браузър</string>
   <string name="prefs_category_basic">Основни</string>

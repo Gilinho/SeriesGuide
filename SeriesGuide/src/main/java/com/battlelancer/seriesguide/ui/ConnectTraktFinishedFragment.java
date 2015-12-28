@@ -25,48 +25,45 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import com.battlelancer.seriesguide.R;
+import com.battlelancer.seriesguide.backend.HexagonTools;
 import com.battlelancer.seriesguide.ui.AddActivity.AddPagerAdapter;
-import com.battlelancer.seriesguide.util.Utils;
 
 /**
- * Tells about successful connection, allows to continue adding shows from users
- * trakt library.
+ * Tells about successful connection, allows to continue adding shows from users trakt library.
  */
 public class ConnectTraktFinishedFragment extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_connect_trakt_finished, container, false);
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_connect_trakt_finished, container, false);
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+        // hide sync message if hexagon is connected (so trakt sync is disabled)
+        if (HexagonTools.isSignedIn(getActivity())) {
+            v.findViewById(R.id.textViewConnectTraktFinished).setVisibility(View.GONE);
+        }
 
         // library button
-        getView().findViewById(R.id.buttonShowLibrary).setOnClickListener(new OnClickListener() {
+        v.findViewById(R.id.buttonShowLibrary).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // open library tab
                 Intent i = new Intent(getActivity(), AddActivity.class);
-                i.putExtra(AddActivity.InitBundle.DEFAULT_TAB, AddPagerAdapter.LIBRARY_TAB_POSITION);
+                i.putExtra(AddActivity.InitBundle.DEFAULT_TAB,
+                        AddPagerAdapter.WATCHED_TAB_POSITION);
                 startActivity(i);
                 getActivity().finish();
             }
         });
 
         // close button
-        getView().findViewById(R.id.buttonClose).setOnClickListener(new OnClickListener() {
+        v.findViewById(R.id.buttonClose).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().finish();
             }
         });
-    }
-    
-    @Override
-    public void onStart() {
-        super.onStart();
-        Utils.trackView(getActivity(), "Connect Trakt Finished");
+
+        return v;
     }
 }

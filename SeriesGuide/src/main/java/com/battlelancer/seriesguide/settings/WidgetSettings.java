@@ -18,6 +18,8 @@ package com.battlelancer.seriesguide.settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.v4.content.ContextCompat;
+import com.battlelancer.seriesguide.R;
 
 /**
  * Access some widget related settings values.
@@ -27,7 +29,7 @@ public class WidgetSettings {
     public interface Type {
         int UPCOMING = 0;
         int RECENT = 1;
-        int FAVORITES = 2;
+        int SHOWS = 2;
     }
 
     public static final String SETTINGS_FILE = "ListWidgetPreferences";
@@ -42,7 +44,10 @@ public class WidgetSettings {
 
     public static final String KEY_PREFIX_WIDGET_ONLY_FAVORITES = "only_favorites_";
 
-    private static final int DEFAULT_WIDGET_BACKGROUND_OPACITY = 50;
+    public static final String KEY_PREFIX_WIDGET_SHOWS_SORT_ORDER = "shows_order_";
+
+    public static final String DEFAULT_WIDGET_BACKGROUND_OPACITY = "100";
+    private static final int DEFAULT_WIDGET_BACKGROUND_OPACITY_INT = 100;
 
     /**
      * Returns the type of episodes that the widget should display.
@@ -58,6 +63,27 @@ public class WidgetSettings {
         }
 
         return type;
+    }
+
+    /**
+     * Returns the sort order of shows. Should be used when the widget is set to the shows type.
+     *
+     * @return A {@link com.battlelancer.seriesguide.settings.ShowsDistillationSettings.ShowsSortOrder}
+     * id.
+     */
+    public static int getWidgetShowsSortOrderId(Context context, int appWidgetId) {
+        int sortOrder = 0;
+        try {
+            sortOrder = Integer.parseInt(context.getSharedPreferences(SETTINGS_FILE, 0)
+                    .getString(KEY_PREFIX_WIDGET_SHOWS_SORT_ORDER + appWidgetId, "0"));
+        } catch (NumberFormatException ignored) {
+        }
+
+        if (sortOrder == 1) {
+            return ShowsDistillationSettings.ShowsSortOrder.TITLE_ID;
+        } else {
+            return ShowsDistillationSettings.ShowsSortOrder.EPISODE_REVERSE_ID;
+        }
     }
 
     /**
@@ -100,23 +126,20 @@ public class WidgetSettings {
      */
     public static int getWidgetBackgroundColor(Context context, int appWidgetId,
             boolean lightBackground) {
-        // taken from https://code.google.com/p/dashclock
-        int opacity = DEFAULT_WIDGET_BACKGROUND_OPACITY;
+        int opacity = DEFAULT_WIDGET_BACKGROUND_OPACITY_INT;
         try {
             opacity = Integer.parseInt(context.getSharedPreferences(SETTINGS_FILE, 0)
-                    .getString(KEY_PREFIX_WIDGET_BACKGROUND_OPACITY + appWidgetId, "50"));
+                    .getString(KEY_PREFIX_WIDGET_BACKGROUND_OPACITY + appWidgetId,
+                            DEFAULT_WIDGET_BACKGROUND_OPACITY));
         } catch (NumberFormatException ignored) {
         }
 
-        if (opacity == 100) {
-            // avoid overflow by handling 100
-            return lightBackground ? 0xffffffff : 0xff000000;
-        } else {
-            int color = (opacity * 256 / 100) << 24;
-            if (lightBackground) {
-                color += 0x00ffffff;
-            }
-            return color;
-        }
+        int baseColor = ContextCompat.getColor(context,
+                lightBackground ? R.color.grey_50 : R.color.grey_850);
+        // strip alpha from base color
+        baseColor = baseColor & 0xFFFFFF;
+        // add new alpha
+        int alpha = (opacity * 255 / 100) << 24;
+        return alpha | baseColor;
     }
 }

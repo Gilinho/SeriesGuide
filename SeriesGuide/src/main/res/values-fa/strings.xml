@@ -22,6 +22,7 @@
   <string name="description_overview">بررسی اجمالی</string>
   <string name="description_poster">نمایش پوستر</string>
   <string name="description_image">تصویر قسمت</string>
+  <string name="description_menu_overflow">More options</string>
   <string name="clear">حذف</string>
   <string name="discard">نپذیرفتن</string>
   <string name="save_selection">ذخیره انتخاب</string>
@@ -31,6 +32,7 @@
   <string name="clear_search_history">تاریخچه جستجو را پاک کنید</string>
   <string name="search_hint">جستجوی قسمتها</string>
   <string name="search_within_show">Search within %s</string>
+  <string name="any_language">Any language</string>
   <string name="updated">به آخرین نسخه به روز.</string>
   <string name="norating">N\a</string>
   <string name="unknown">نامعلوم</string>
@@ -72,6 +74,7 @@
   <string name="lastEdit">آخرین ویرایش / / TheTVDB</string>
   <string name="services_watch">تماشا کردن</string>
   <string name="services_more">بیشتر</string>
+  <string name="no_translation">There is no description translated to %1$s available at %2$s.</string>
   <string name="today">امروز</string>
   <string name="now">الان</string>
   <string name="daily">روزانه</string>
@@ -145,6 +148,8 @@
   <string name="checkin_searchhint">Type a show name</string>
   <string name="add_empty">هیچ سریالی در اینجا موجود نمیباشد.</string>
   <string name="no_results">هیچ نتیجه ای پیدا نشد، کلمات را بصورت کامل امتحان کنید.</string>
+  <string name="action_try_any_language">Try any language</string>
+  <string name="action_try_again">Try again</string>
   <string name="search_error">عدم موفقیت در جستجو، بعدا دوباره امتحان کنید.</string>
   <string name="add_all">افزودن همه</string>
   <string name="add_multiple">همه ی برنامه ها در لیستان بلافاصله ظاهر می شود.</string>
@@ -152,7 +157,8 @@
   <string name="add_error">قادر به افزودن %s نمی باشد.</string>
   <string name="add_already_exists">%s  در حال حاضر در لیست نمایشتان هست.</string>
   <string name="recommended">توصیه می شود</string>
-  <string name="library">کتابخانه</string>
+  <string name="watched_shows">Watched</string>
+  <string name="shows_collection">مجموعه</string>
   <string name="watchlist">لیست نمایش</string>
   <string name="first_list">لیست اول</string>
   <string name="list_add">افزودن لیست</string>
@@ -171,7 +177,6 @@
   <string name="watchlist_added">به لیست تماشا اظافه شد</string>
   <string name="watchlist_removed">از لیست تماشا حذف شد</string>
   <string name="movies_search_hint">نوع عنوان فیلم</string>
-  <string name="movies_empty">جستجو برای فیلم .</string>
   <string name="movies_collection_empty">شما هیچ فیلمی به مجموعه اظافه نکرده اید.</string>
   <string name="movies_watchlist_empty">شما فیلم ها را به لیست تماشای خود اضافه نکرده اید.</string>
   <string name="trailer">تریلر</string>
@@ -190,29 +195,29 @@
   <string name="movies_on_watchlist">%s در لیست تماشا</string>
   <string name="runtime_movies_watchlist">مدت زمان فیلم های لیست تماشا</string>
   <plurals name="days_plural">
-    <item quantity="one">روز %d</item>
-    <item quantity="zero">روز %d</item>
-    <item quantity="two">روز %d</item>
-    <item quantity="few">روز %d</item>
-    <item quantity="many">روز %d</item>
-    <item quantity="other">روز %d</item>
-  </plurals>
+        <item quantity="one">روز %d</item>
+        <item quantity="zero">روز %d</item>
+        <item quantity="two">روز %d</item>
+        <item quantity="few">روز %d</item>
+        <item quantity="many">روز %d</item>
+        <item quantity="other">روز %d</item>
+    </plurals>
   <plurals name="hours_plural">
-    <item quantity="zero">ساعت %d</item>
-    <item quantity="one">ساعت %d</item>
-    <item quantity="two">ساعت %d</item>
-    <item quantity="few">ساعت %d</item>
-    <item quantity="many">ساعت %d</item>
-    <item quantity="other">ساعت %d</item>
-  </plurals>
+        <item quantity="zero">ساعت %d</item>
+        <item quantity="one">ساعت %d</item>
+        <item quantity="two">ساعت %d</item>
+        <item quantity="few">ساعت %d</item>
+        <item quantity="many">ساعت %d</item>
+        <item quantity="other">ساعت %d</item>
+    </plurals>
   <plurals name="minutes_plural">
-    <item quantity="zero">%d دقیقه</item>
-    <item quantity="one">%d دقیقه</item>
-    <item quantity="two">%d دقیقه</item>
-    <item quantity="few">%d دقیقه</item>
-    <item quantity="many">%d دقیقه</item>
-    <item quantity="other">%d دقیقه</item>
-  </plurals>
+        <item quantity="zero">%d دقیقه</item>
+        <item quantity="one">%d دقیقه</item>
+        <item quantity="two">%d دقیقه</item>
+        <item quantity="few">%d دقیقه</item>
+        <item quantity="many">%d دقیقه</item>
+        <item quantity="other">%d دقیقه</item>
+    </plurals>
   <string name="hexagon_warning">تجربی!</string>
   <string name="hexagon_setup">راه اندازی ذخیره ابری SeriesGuide</string>
   <string name="hexagon_description">اتصال به ابر برای پشتیبان گیری و همگام سازی رانمایش ها و فیلم هایتان.</string>
@@ -238,13 +243,14 @@
   <string name="trakt_notcollected">%s not collected.</string>
   <string name="checkin_success_trakt">Checked into %s on trakt.</string>
   <string name="checkin_canceled_success_trakt">Cancelled check-in on trakt.</string>
-  <string name="checkin_error_not_exists">Item not (yet) found on trakt. Try again later.</string>
   <string name="traktcheckin_cancel">Override</string>
   <string name="traktcheckin_inprogress">You are already checked into another episode or movie. Either override the previous check-in or wait %s and try again.</string>
   <string name="traktcheckin_wait">I\'ll wait</string>
   <string name="trakt_success">Sent to trakt.</string>
   <string name="trakt_error_credentials">Something went wrong. Check your trakt credentials and try again.</string>
   <string name="trakt_error_general">Could not talk to trakt. Try again later.</string>
+  <string name="trakt_error_not_exists">Not (yet) available on trakt. Try again later.</string>
+  <string name="trakt_notice_not_exists">Can not (yet) be tracked with trakt.</string>
   <string name="trakt_account">trakt account</string>
   <string name="trakt_connect_instructions">On the next screen sign into trakt or create a new account. Then allow SeriesGuide access to your trakt account.</string>
   <string name="connect_trakt">Connect trakt</string>
@@ -254,6 +260,7 @@
   <string name="waitplease">A moment, please…</string>
   <string name="connect">Connect</string>
   <string name="disconnect">Disconnect</string>
+  <string name="use_integrated_browser">Use integrated browser</string>
   <string name="connect_trakt_done">Connected to trakt!</string>
   <string name="connect_trakt_done_explanation">SeriesGuide will now sync the shows and movies on this device with trakt. This may take some time.</string>
   <string name="add_trakt_shows">Add more shows from your trakt library:</string>
@@ -272,16 +279,18 @@
   <string name="rating8">Great</string>
   <string name="rating9">Superb</string>
   <plurals name="votes">
-    <item quantity="zero">رای ها %d</item>
-    <item quantity="one">%d vote</item>
-    <item quantity="two">رای ها %d</item>
-    <item quantity="few">رای ها %d</item>
-    <item quantity="many">رای %d</item>
-    <item quantity="other">رای ها %d</item>
-  </plurals>
+        <item quantity="zero">رای ها %d</item>
+        <item quantity="one">%d vote</item>
+        <item quantity="two">رای ها %d</item>
+        <item quantity="few">رای ها %d</item>
+        <item quantity="many">رای %d</item>
+        <item quantity="other">رای ها %d</item>
+    </plurals>
   <string name="checkin">Check in</string>
   <string name="checkin_hint">Type a message (optional)</string>
   <string name="paste_title">Paste title</string>
+  <string name="pref_quick_checkin">Quick check in</string>
+  <string name="pref_quick_checkin_summary">Do not ask for a check in message</string>
   <string name="feedback">ارسال بازخورد</string>
   <string name="action_open_in_browser">Open in browser</string>
   <string name="prefs_category_basic">اصول اولیه</string>

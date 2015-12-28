@@ -5,6 +5,103 @@ Release notes
 
 All dates are in the European Central timezone.
 
+Version 27 *(2015-12-21)*
+-----------------------------
+
+* trakt login through default browser.
+* Improved accessibility.
+* More material list widget design.
+
+#### 27 *(2015-12-21)*
+
+* TWEAK Updated list widget design to feel more material.
+* NOTICE Latest translations from crowdin.
+
+#### 27-beta4 *(2015-12-17)*
+
+* TWEAK Improve accessibility by adding missing descriptions to buttons and labels, useful titles to screens.
+* FIX Could not add show existing on SeriesGuide Cloud in some circumstances.
+* FIX trakt login was broken on Android 4.4 and below.
+* NOTICE Latest translations from crowdin.
+
+#### 27-beta3 *(2015-12-10)*
+
+* TWEAK Show message if no show or episode description is available.
+* TWEAK Show re-try buttons if there are no search results or searching for shows/movies failed.
+* NOTICE Latest translations from crowdin.
+
+#### 27-beta2 *(2015-11-27)*
+
+* TWEAK Connect trakt: show integrated browser option also if no auth codes are returned.
+* TWEAK Hide check-in buttons when connected to SeriesGuide Cloud. If connected to trakt as well,
+  watched items would not sync down. Marking watched manually would create duplicate history entries.
+* FIX On some occasions the nav drawer has an incorrect item selected.
+* FIX Did not show last watched episode for trakt friends if their username had a space character.
+* NOTICE Latest translations from crowdin.
+
+#### 27-beta1 *(2015-11-19)*
+
+* TWEAK When connecting to trakt the default browser is used, which likely already has your credentials.
+  The integrated browser is still available as a fall back.
+* TWEAK Sync show languages with SeriesGuide Cloud.
+* TWEAK If the app bar scrolls out of view, it will now snap to an appropriate position.
+* NOTICE Latest translations from crowdin.
+
+Version 26 *(2015-11-06)*
+-----------------------------
+
+* Add shows that can not be tracked with trakt (also no ratings, comments), though they will have limited release information.
+* Select the language when adding a show through search, change the preferred language of a show after adding it.
+* Add a trakt "Collection" tab to the "Add show" screen ("Library" tab is now called "Watched").
+* "Favorites" widget type is now "Shows", adds favorites filter and sort order (by latest episode or title).
+* "Quick check in" setting.
+
+#### 26.0.1 *(2015-11-12)*
+
+* FIX Language update triggering each time opening show details.
+* FIX Crash when updating shows on some devices.
+* NOTICE Latest translations from crowdin.
+
+#### 26 *(2015-11-06)*
+
+* TWEAK Clear notification when checking in from it.
+* NOTICE Latest translations from crowdin.
+
+#### 26-beta4 *(2015-10-29)*
+
+* TWEAK Change "Favorites" widget type to "Shows", add setting to filter on favorites instead, add
+  sort order setting (by latest episode or title).
+* TWEAK Show fast scrollbar again in movies watchlist and collection tabs if displaying many items.
+* FIX Crash when trying to change show language (should now really be fixed).
+* FIX Crash when SeriesGuide Cloud account resolution fails while syncing.
+* NOTICE Latest translations from crowdin.
+
+#### 26-beta3 *(2015-10-22)*
+
+* TWEAK Allow to track shows locally if they are not (yet) available on trakt. Show better error
+  messages when trying to rate, comment or check-in on a show that is not available on trakt.
+* FIX Search history now correctly saves latest search terms, displays them in order of last use.
+* FIX Crash when trying to change show language.
+* NOTICE Latest translations from crowdin.
+
+#### 26-beta2 *(2015-10-16)*
+
+* NOTICE It is now again possible to add shows that are only on TheTVDB and not on trakt (e.g. if
+  they do or can not have an English translation), though they currently display no detailed
+  release information (e.g. week day, time or country).
+* TWEAK Add language selection when adding a show through search.
+* TWEAK Allow to change the preferred content language of a show.
+* FIX Resolved some bugs, crashes.
+* NOTICE Latest translations from crowdin.
+
+#### 26-beta1 *(2015-10-07)*
+
+* TWEAK Add trakt "Collection" tab in "Add show" screen. Rename "Library" to "Watched".
+* FEATURE Add "Quick check in" setting so the check in dialog will not ask for a check in message.
+* TWEAK Trakt links for shows and episodes now always open the item directly instead of showing search results.
+* TWEAK Show shortcuts now have nicer icons (thanks to a code contribution from @adneal).
+* NOTICE Latest translations from crowdin.
+
 Version 25 *(2015-10-01)*
 -----------------------------
 

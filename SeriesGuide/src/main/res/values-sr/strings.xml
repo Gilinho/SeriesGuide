@@ -22,6 +22,7 @@
   <string name="description_overview">Преглед</string>
   <string name="description_poster">Прикажи постер</string>
   <string name="description_image">Слика епизоде</string>
+  <string name="description_menu_overflow">More options</string>
   <string name="clear">Обриши</string>
   <string name="discard">Одбаци</string>
   <string name="save_selection">Сачувај изабрано</string>
@@ -31,6 +32,7 @@
   <string name="clear_search_history">Обриши историју претраге</string>
   <string name="search_hint">Тражи епизоде</string>
   <string name="search_within_show">Тражи унутар %s</string>
+  <string name="any_language">Any language</string>
   <string name="updated">Ажурирано на последњу верзију.</string>
   <string name="norating">непознато</string>
   <string name="unknown">непознато</string>
@@ -72,6 +74,7 @@
   <string name="lastEdit">Последње уређено // TVDb</string>
   <string name="services_watch">Гледај</string>
   <string name="services_more">Више</string>
+  <string name="no_translation">There is no description translated to %1$s available at %2$s.</string>
   <string name="today">данас</string>
   <string name="now">сада</string>
   <string name="daily">Дневно</string>
@@ -145,6 +148,8 @@
   <string name="checkin_searchhint">Унеси име серије</string>
   <string name="add_empty">Овде нема серија.</string>
   <string name="no_results">Нема резултата, покушајте са целим речима.</string>
+  <string name="action_try_any_language">Try any language</string>
+  <string name="action_try_again">Try again</string>
   <string name="search_error">Неуспела претрага, покушајте поново касније.</string>
   <string name="add_all">Додај све</string>
   <string name="add_multiple">Све серије ће се ускоро појавити у вашој листи серија.</string>
@@ -152,7 +157,8 @@
   <string name="add_error">Немогуће додати %s.</string>
   <string name="add_already_exists">%s је већ на вашој листи.</string>
   <string name="recommended">Препоручене</string>
-  <string name="library">Библиотека</string>
+  <string name="watched_shows">Watched</string>
+  <string name="shows_collection">Колекција</string>
   <string name="watchlist">Листа за гледање</string>
   <string name="first_list">Прва листа</string>
   <string name="list_add">Додај листу</string>
@@ -171,7 +177,6 @@
   <string name="watchlist_added">Додато на листу за гледање</string>
   <string name="watchlist_removed">Листа за гледање је уклоњена</string>
   <string name="movies_search_hint">Унеси име филма</string>
-  <string name="movies_empty">Тражи филм приказан изнад.</string>
   <string name="movies_collection_empty">Још увек нисте додали филмове вашој колекцији.</string>
   <string name="movies_watchlist_empty">Листа филмова за гледање је празна.</string>
   <string name="trailer">Трејлер</string>
@@ -190,29 +195,29 @@
   <string name="movies_on_watchlist">%s у листи</string>
   <string name="runtime_movies_watchlist">Трајање филмова у листи</string>
   <plurals name="days_plural">
-    <item quantity="one">%d дан</item>
-    <item quantity="zero">%d дана</item>
-    <item quantity="two">%d дана</item>
-    <item quantity="few">%d дана</item>
-    <item quantity="many">%d дана</item>
-    <item quantity="other">%d дана</item>
-  </plurals>
+        <item quantity="one">%d дан</item>
+        <item quantity="zero">%d дана</item>
+        <item quantity="two">%d дана</item>
+        <item quantity="few">%d дана</item>
+        <item quantity="many">%d дана</item>
+        <item quantity="other">%d дана</item>
+    </plurals>
   <plurals name="hours_plural">
-    <item quantity="zero">%d сати</item>
-    <item quantity="one">%d сат</item>
-    <item quantity="two">%d сати</item>
-    <item quantity="few">%d сати</item>
-    <item quantity="many">%d сати</item>
-    <item quantity="other">%d сати</item>
-  </plurals>
+        <item quantity="zero">%d сати</item>
+        <item quantity="one">%d сат</item>
+        <item quantity="two">%d сати</item>
+        <item quantity="few">%d сати</item>
+        <item quantity="many">%d сати</item>
+        <item quantity="other">%d сати</item>
+    </plurals>
   <plurals name="minutes_plural">
-    <item quantity="zero">%d минута</item>
-    <item quantity="one">%d минут</item>
-    <item quantity="two">%d минута</item>
-    <item quantity="few">%d минута</item>
-    <item quantity="many">%d минута</item>
-    <item quantity="other">%d минута</item>
-  </plurals>
+        <item quantity="zero">%d минута</item>
+        <item quantity="one">%d минут</item>
+        <item quantity="two">%d минута</item>
+        <item quantity="few">%d минута</item>
+        <item quantity="many">%d минута</item>
+        <item quantity="other">%d минута</item>
+    </plurals>
   <string name="hexagon_warning">Експериментално!</string>
   <string name="hexagon_setup">Подеси SeriesGuide Cloud сервис</string>
   <string name="hexagon_description">Повежи се на Cloud да сачуваш и синхронизујеш своје филмове и ТВ програме.</string>
@@ -238,13 +243,14 @@
   <string name="trakt_notcollected">%s није у колекцији.</string>
   <string name="checkin_success_trakt">Пријављено гледање %s на trakt.tv</string>
   <string name="checkin_canceled_success_trakt">Отказана пријава гледања на тракту.</string>
-  <string name="checkin_error_not_exists">Item not (yet) found on trakt. Try again later.</string>
   <string name="traktcheckin_cancel">Прескочи пријаву</string>
   <string name="traktcheckin_inprogress">Пријављени сте да гледате другу епизоду или филм. Замените претходну пријаву, или чекајте %s и покушајте поново.</string>
   <string name="traktcheckin_wait">Сачекаћу</string>
   <string name="trakt_success">Sent to trakt.</string>
   <string name="trakt_error_credentials">Нешто није у реду. Молимо проверите Ваше акредитиве и покушајте поново.</string>
   <string name="trakt_error_general">Не могу да комуницирам са trakt-ом. Покушајте поново касније.</string>
+  <string name="trakt_error_not_exists">Not (yet) available on trakt. Try again later.</string>
+  <string name="trakt_notice_not_exists">Can not (yet) be tracked with trakt.</string>
   <string name="trakt_account">trakt account</string>
   <string name="trakt_connect_instructions">On the next screen sign into trakt or create a new account. Then allow SeriesGuide access to your trakt account.</string>
   <string name="connect_trakt">Повежи trakt</string>
@@ -254,6 +260,7 @@
   <string name="waitplease">Тренутак, молим…</string>
   <string name="connect">Повежи</string>
   <string name="disconnect">Прекини везу</string>
+  <string name="use_integrated_browser">Use integrated browser</string>
   <string name="connect_trakt_done">Повезано са trakt-ом!</string>
   <string name="connect_trakt_done_explanation">SeriesGuide ће сада синхронизовати серије и филмове са овог уређаја на trakt. Ово може потрајати неко време.</string>
   <string name="add_trakt_shows">Додајте серије из ваше trakt библиотеке:</string>
@@ -272,16 +279,18 @@
   <string name="rating8">Одлично</string>
   <string name="rating9">Фантастично</string>
   <plurals name="votes">
-    <item quantity="zero">%d гласова</item>
-    <item quantity="one">%d глас</item>
-    <item quantity="two">%d гласова</item>
-    <item quantity="few">%d гласова</item>
-    <item quantity="many">%d гласова</item>
-    <item quantity="other">%d гласова</item>
-  </plurals>
+        <item quantity="zero">%d гласова</item>
+        <item quantity="one">%d глас</item>
+        <item quantity="two">%d гласова</item>
+        <item quantity="few">%d гласова</item>
+        <item quantity="many">%d гласова</item>
+        <item quantity="other">%d гласова</item>
+    </plurals>
   <string name="checkin">Пријави гледање</string>
   <string name="checkin_hint">Унеси поруку (по избору)</string>
   <string name="paste_title">Налепи наслов</string>
+  <string name="pref_quick_checkin">Quick check in</string>
+  <string name="pref_quick_checkin_summary">Do not ask for a check in message</string>
   <string name="feedback">Пошаљи повратне информације</string>
   <string name="action_open_in_browser">Open in browser</string>
   <string name="prefs_category_basic">Основно</string>

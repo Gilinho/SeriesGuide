@@ -8,7 +8,7 @@
   <string name="search">Cerca</string>
   <string name="preferences">Configuració</string>
   <string name="help">Ajuda</string>
-  <string name="help_and_feedback">Help &amp; Feedback</string>
+  <string name="help_and_feedback">Ajuda i comentaris</string>
   <string name="drawer_open">Obre el calaix de navegació</string>
   <string name="drawer_close">Tanca el calaix de navegació</string>
   <string name="show">Sèrie</string>
@@ -22,6 +22,7 @@
   <string name="description_overview">Visió general</string>
   <string name="description_poster">Mostra el cartell</string>
   <string name="description_image">Imatge de l\'episodi</string>
+  <string name="description_menu_overflow">More options</string>
   <string name="clear">Buida</string>
   <string name="discard">Descarta</string>
   <string name="save_selection">Desa la selecció</string>
@@ -31,6 +32,7 @@
   <string name="clear_search_history">Esborra l\'historial</string>
   <string name="search_hint">Cerca episodis</string>
   <string name="search_within_show">Cerca a %s</string>
+  <string name="any_language">Qualsevol idioma</string>
   <string name="updated">S\'ha actualitzat a la darrera versió.</string>
   <string name="norating">cap</string>
   <string name="unknown">deconegut</string>
@@ -72,6 +74,7 @@
   <string name="lastEdit">Darrera edició // TVDb</string>
   <string name="services_watch">Veure</string>
   <string name="services_more">Més</string>
+  <string name="no_translation">There is no description translated to %1$s available at %2$s.</string>
   <string name="today">avui</string>
   <string name="now">ara</string>
   <string name="daily">Diàriament</string>
@@ -145,6 +148,8 @@
   <string name="checkin_searchhint">Escriviu el nom d\'una sèrie</string>
   <string name="add_empty">Aquí no hi ha series.</string>
   <string name="no_results">Cap resultat, proveu paraules completes.</string>
+  <string name="action_try_any_language">Try any language</string>
+  <string name="action_try_again">Try again</string>
   <string name="search_error">La cerca ha fallat, intenteu-ho més tard.</string>
   <string name="add_all">Afegeix-ho tot</string>
   <string name="add_multiple">Totes les sèries apareixeran de seguida a la vostra llista de sèries.</string>
@@ -152,7 +157,8 @@
   <string name="add_error">No es pot afegir %s.</string>
   <string name="add_already_exists">%s ja és a la vostra llista de sèries.</string>
   <string name="recommended">Recomanat</string>
-  <string name="library">Biblioteca</string>
+  <string name="watched_shows">Watched</string>
+  <string name="shows_collection">Coŀlecció</string>
   <string name="watchlist">Llista de seguiment</string>
   <string name="first_list">Primera llista</string>
   <string name="list_add">Afegeix llista</string>
@@ -171,7 +177,6 @@
   <string name="watchlist_added">S\'ha afegit a la llista de seguiment</string>
   <string name="watchlist_removed">S\'ha eliminat de la llista de seguiment</string>
   <string name="movies_search_hint">Escriviu el títol d\'una peŀlícula</string>
-  <string name="movies_empty">Cerca per a una peŀlícula anterior.</string>
   <string name="movies_collection_empty">No heu afegit cap peŀlícula a la vostra coŀlecció.</string>
   <string name="movies_watchlist_empty">No heu afegit cap peŀlícula a la vostra llista de seguiment.</string>
   <string name="trailer">Tràiler</string>
@@ -190,29 +195,29 @@
   <string name="movies_on_watchlist">%s a la llista de seguiment</string>
   <string name="runtime_movies_watchlist">Durada de la llista de peŀlícules</string>
   <plurals name="days_plural">
-    <item quantity="one">%d dia</item>
-    <item quantity="zero">%d dies</item>
-    <item quantity="two">%d dies</item>
-    <item quantity="few">%d dies</item>
-    <item quantity="many">%d dies</item>
-    <item quantity="other">%d dies</item>
-  </plurals>
+        <item quantity="one">%d dia</item>
+        <item quantity="zero">%d dies</item>
+        <item quantity="two">%d dies</item>
+        <item quantity="few">%d dies</item>
+        <item quantity="many">%d dies</item>
+        <item quantity="other">%d dies</item>
+    </plurals>
   <plurals name="hours_plural">
-    <item quantity="zero">%d hores</item>
-    <item quantity="one">%d hora</item>
-    <item quantity="two">%d hores</item>
-    <item quantity="few">%d hores</item>
-    <item quantity="many">%d hores</item>
-    <item quantity="other">%d hores</item>
-  </plurals>
+        <item quantity="zero">%d hores</item>
+        <item quantity="one">%d hora</item>
+        <item quantity="two">%d hores</item>
+        <item quantity="few">%d hores</item>
+        <item quantity="many">%d hores</item>
+        <item quantity="other">%d hores</item>
+    </plurals>
   <plurals name="minutes_plural">
-    <item quantity="zero">%d minuts</item>
-    <item quantity="one">%d minut</item>
-    <item quantity="two">%d minuts</item>
-    <item quantity="few">%d minuts</item>
-    <item quantity="many">%d minuts</item>
-    <item quantity="other">%d minuts</item>
-  </plurals>
+        <item quantity="zero">%d minuts</item>
+        <item quantity="one">%d minut</item>
+        <item quantity="two">%d minuts</item>
+        <item quantity="few">%d minuts</item>
+        <item quantity="many">%d minuts</item>
+        <item quantity="other">%d minuts</item>
+    </plurals>
   <string name="hexagon_warning">Experimental!</string>
   <string name="hexagon_setup">Configureu el Cloud de SeriesGuide</string>
   <string name="hexagon_description">Connecteu-vos al nostre Cloud per disposar de còpies de seguretat i poder sincronitzar les vostres sèries i peŀlícules.</string>
@@ -238,13 +243,14 @@
   <string name="trakt_notcollected">%s no recopilats.</string>
   <string name="checkin_success_trakt">S\'ha enregistrat a %s de trakt.</string>
   <string name="checkin_canceled_success_trakt">S\'ha canceŀlat el registre a trakt.</string>
-  <string name="checkin_error_not_exists">Aquest element no es troba (encara) a trakt. Prova-ho més tard.</string>
   <string name="traktcheckin_cancel">Substitueix</string>
   <string name="traktcheckin_inprogress">Ja us heu registrat a un altre episodi o peŀlícula. O bé substituïu el darrer registre o bé us espereu %s i ho torneu a provar.</string>
   <string name="traktcheckin_wait">Esperaré</string>
   <string name="trakt_success">Enviat a trakt.</string>
   <string name="trakt_error_credentials">Alguna cosa no ha funcionat. Torneu a introduir les vostres credencials i proveu-ho una altra vegada.</string>
   <string name="trakt_error_general">No funciona la comunicació amb trakt. Intenteu-ho més tard.</string>
+  <string name="trakt_error_not_exists">Not (yet) available on trakt. Try again later.</string>
+  <string name="trakt_notice_not_exists">Can not (yet) be tracked with trakt.</string>
   <string name="trakt_account">Compte de trakt</string>
   <string name="trakt_connect_instructions">En la següent pantalla accedeix a trakt o crea un compte nou. Llavors permet a SeriesGuide que hi accedeixi.</string>
   <string name="connect_trakt">Connecta\'t al trakt</string>
@@ -254,6 +260,7 @@
   <string name="waitplease">Un moment, si us plau…</string>
   <string name="connect">Connecta</string>
   <string name="disconnect">Desconnecta</string>
+  <string name="use_integrated_browser">Use integrated browser</string>
   <string name="connect_trakt_done">S\'ha connectat a trakt!</string>
   <string name="connect_trakt_done_explanation">Tot seguit, SeriesGuide sincronitzarà les sèries i peŀlícules en aquest dispositiu del trakt. Això pot trigar una estona.</string>
   <string name="add_trakt_shows">Afegiu més sèries de la vostra biblioteca del trakt:</string>
@@ -272,18 +279,20 @@
   <string name="rating8">Molt bo</string>
   <string name="rating9">Superb</string>
   <plurals name="votes">
-    <item quantity="zero">%d vots</item>
-    <item quantity="one">%d vot</item>
-    <item quantity="two">%d vots</item>
-    <item quantity="few">%d vots</item>
-    <item quantity="many">%d vots</item>
-    <item quantity="other">%d vots</item>
-  </plurals>
+        <item quantity="zero">%d vots</item>
+        <item quantity="one">%d vot</item>
+        <item quantity="two">%d vots</item>
+        <item quantity="few">%d vots</item>
+        <item quantity="many">%d vots</item>
+        <item quantity="other">%d vots</item>
+    </plurals>
   <string name="checkin">Inica sessió</string>
   <string name="checkin_hint">Escriviu un missatge (opcional)</string>
   <string name="paste_title">Enganxa el títol</string>
+  <string name="pref_quick_checkin">Quick check in</string>
+  <string name="pref_quick_checkin_summary">Do not ask for a check in message</string>
   <string name="feedback">Envia comentaris</string>
-  <string name="action_open_in_browser">Open in browser</string>
+  <string name="action_open_in_browser">Obre al navegador</string>
   <string name="prefs_category_basic">Bàsics</string>
   <string name="prefs_category_sharing">Serveis</string>
   <string name="prefs_category_advanced">Avançat</string>

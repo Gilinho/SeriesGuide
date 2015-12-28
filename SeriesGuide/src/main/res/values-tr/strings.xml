@@ -8,7 +8,7 @@
   <string name="search">Ara</string>
   <string name="preferences">Ayarlar</string>
   <string name="help">Yardım</string>
-  <string name="help_and_feedback">Help &amp; Feedback</string>
+  <string name="help_and_feedback">Yardım ve Geribildirim</string>
   <string name="drawer_open">Navigasyon çekmecesini aç</string>
   <string name="drawer_close">Navigasyon çekmecesini kapat</string>
   <string name="show">Dizi</string>
@@ -22,6 +22,7 @@
   <string name="description_overview">Genel Bakış</string>
   <string name="description_poster">Posteri göster</string>
   <string name="description_image">Bölüm resmi</string>
+  <string name="description_menu_overflow">More options</string>
   <string name="clear">Temizle</string>
   <string name="discard">Yoksay</string>
   <string name="save_selection">Seçimi kaydet</string>
@@ -31,6 +32,7 @@
   <string name="clear_search_history">Arama geçmişini temizle</string>
   <string name="search_hint">Bölüm ara</string>
   <string name="search_within_show">İçinde ara %s</string>
+  <string name="any_language">Herhangi bir dil</string>
   <string name="updated">En son sürüme güncellendi.</string>
   <string name="norating">Geçersiz</string>
   <string name="unknown">bilinmiyor</string>
@@ -72,6 +74,7 @@
   <string name="lastEdit">Son Düzenleme // TVDb</string>
   <string name="services_watch">İzle</string>
   <string name="services_more">Daha</string>
+  <string name="no_translation">There is no description translated to %1$s available at %2$s.</string>
   <string name="today">bugün</string>
   <string name="now">şimdi</string>
   <string name="daily">Günlük</string>
@@ -145,6 +148,8 @@
   <string name="checkin_searchhint">Bir dizi adı yazın</string>
   <string name="add_empty">Burada dizi yok.</string>
   <string name="no_results">Sonuç bulunamadı, tam sözcüklerle deneyin.</string>
+  <string name="action_try_any_language">Herhangi bir dil deneyin</string>
+  <string name="action_try_again">Yeniden deneyin</string>
   <string name="search_error">Arama başarısız oldu, daha sonra tekrar deneyin.</string>
   <string name="add_all">Tümünü ekle</string>
   <string name="add_multiple">Tüm diziler kısa süre içinde listenizde görünecektir.</string>
@@ -152,7 +157,8 @@
   <string name="add_error">%s eklenemedi.</string>
   <string name="add_already_exists">%s zaten dizi listenizde mevcut.</string>
   <string name="recommended">Önerilen</string>
-  <string name="library">Kitaplık</string>
+  <string name="watched_shows">İzlenmiş</string>
+  <string name="shows_collection">Koleksiyon</string>
   <string name="watchlist">İzleme listesi</string>
   <string name="first_list">İlk liste</string>
   <string name="list_add">Yeni liste</string>
@@ -171,7 +177,6 @@
   <string name="watchlist_added">İzleme Listesine Eklendi</string>
   <string name="watchlist_removed">İzleme Listesinden Kaldırıldı</string>
   <string name="movies_search_hint">Film adı girin</string>
-  <string name="movies_empty">Üst kısımdan bir film arayın.</string>
   <string name="movies_collection_empty">Koleksiyona film eklemedin.</string>
   <string name="movies_watchlist_empty">İzleme listene film eklemedin.</string>
   <string name="trailer">Fragman</string>
@@ -190,29 +195,29 @@
   <string name="movies_on_watchlist">%s İzleme listesi</string>
   <string name="runtime_movies_watchlist">Film izleme listesinin toplam süresi</string>
   <plurals name="days_plural">
-    <item quantity="one">%d gün</item>
-    <item quantity="zero">%d gün</item>
-    <item quantity="two">%d gün</item>
-    <item quantity="few">%d gün</item>
-    <item quantity="many">%d gün</item>
-    <item quantity="other">%d gün</item>
-  </plurals>
+        <item quantity="one">%d gün</item>
+        <item quantity="zero">%d gün</item>
+        <item quantity="two">%d gün</item>
+        <item quantity="few">%d gün</item>
+        <item quantity="many">%d gün</item>
+        <item quantity="other">%d gün</item>
+    </plurals>
   <plurals name="hours_plural">
-    <item quantity="zero">%d saat</item>
-    <item quantity="one">%d saat</item>
-    <item quantity="two">%d saat</item>
-    <item quantity="few">%d saat</item>
-    <item quantity="many">%d saat</item>
-    <item quantity="other">%d saat</item>
-  </plurals>
+        <item quantity="zero">%d saat</item>
+        <item quantity="one">%d saat</item>
+        <item quantity="two">%d saat</item>
+        <item quantity="few">%d saat</item>
+        <item quantity="many">%d saat</item>
+        <item quantity="other">%d saat</item>
+    </plurals>
   <plurals name="minutes_plural">
-    <item quantity="zero">%d dakika</item>
-    <item quantity="one">%d dakika</item>
-    <item quantity="two">%d dakika</item>
-    <item quantity="few">%d dakika</item>
-    <item quantity="many">%d dakika</item>
-    <item quantity="other">%d dakika</item>
-  </plurals>
+        <item quantity="zero">%d dakika</item>
+        <item quantity="one">%d dakika</item>
+        <item quantity="two">%d dakika</item>
+        <item quantity="few">%d dakika</item>
+        <item quantity="many">%d dakika</item>
+        <item quantity="other">%d dakika</item>
+    </plurals>
   <string name="hexagon_warning">Deneysel!</string>
   <string name="hexagon_setup">SeriesGuide Bulut Hizmetini ayarla</string>
   <string name="hexagon_description">Yedekleme için buluta bağlanın ve dizilerinizi ve filmlerinizi senkronize edin.</string>
@@ -238,13 +243,14 @@
   <string name="trakt_notcollected">Kolleksiyonda bulunmayan: %s.</string>
   <string name="checkin_success_trakt">trakt üzerinden %s girişi yapıldı.</string>
   <string name="checkin_canceled_success_trakt">trakt üzerinden giriş iptal edildi.</string>
-  <string name="checkin_error_not_exists">Madde trakt\'da (daha) bulunamadı. Daha sonra tekrar dene.</string>
   <string name="traktcheckin_cancel">Geçersiz Kıl</string>
   <string name="traktcheckin_inprogress">Başka bir bölüm veya filme giriş yapmış durumdasınız. Ya önceki girişinizi geçersiz kılın, ya da %s bekleyin ve tekrar deneyin.</string>
   <string name="traktcheckin_wait">Bekleyin</string>
   <string name="trakt_success">Trakt\'a gönder.</string>
   <string name="trakt_error_credentials">Bir şeyler ters gitti. Lütfen kimlik bilgilerinizi denetleyin ve yeniden deneyin.</string>
   <string name="trakt_error_general">Trakt\'a bağlanılamadı. Daha sonra tekrar deneyin.</string>
+  <string name="trakt_error_not_exists">Trakt (henüz) mevcut değil. Daha sonra yeniden deneyin.</string>
+  <string name="trakt_notice_not_exists">Can not (yet) be tracked with trakt.</string>
   <string name="trakt_account">trakt hesabı</string>
   <string name="trakt_connect_instructions">Bir sonraki ekranda trakt\'e giriş yapabilir ya da hesap oluşturabilirsiniz. Sonrasında SeriesGuide erişimine izin verin.</string>
   <string name="connect_trakt">trakt\'e bağlan</string>
@@ -254,6 +260,7 @@
   <string name="waitplease">Bir dakika lütfen…</string>
   <string name="connect">Bağlan</string>
   <string name="disconnect">Bağlantıyı Kes</string>
+  <string name="use_integrated_browser">Use integrated browser</string>
   <string name="connect_trakt_done">trakt\'e bağlanıldı!</string>
   <string name="connect_trakt_done_explanation">Şimdi SeriesGuide bu cihazdaki dizileri ve filmleri trakt ile eşleyecek. Bu işlem biraz zaman alabilir.</string>
   <string name="add_trakt_shows">Kütüphanenden diziler ekle:</string>
@@ -272,16 +279,18 @@
   <string name="rating8">Harika</string>
   <string name="rating9">Süper</string>
   <plurals name="votes">
-    <item quantity="zero">%d oy</item>
-    <item quantity="one">%d oy</item>
-    <item quantity="two">%d oy</item>
-    <item quantity="few">%d oy</item>
-    <item quantity="many">%d oy</item>
-    <item quantity="other">%d oylar</item>
-  </plurals>
+        <item quantity="zero">%d oy</item>
+        <item quantity="one">%d oy</item>
+        <item quantity="two">%d oy</item>
+        <item quantity="few">%d oy</item>
+        <item quantity="many">%d oy</item>
+        <item quantity="other">%d oylar</item>
+    </plurals>
   <string name="checkin">Giriş yap</string>
   <string name="checkin_hint">Bir mesaj yazın (isteğe bağlı)</string>
   <string name="paste_title">Başlığı yapıştır</string>
+  <string name="pref_quick_checkin">Hızlıca check-in yap</string>
+  <string name="pref_quick_checkin_summary">Check-in mesajı sorma</string>
   <string name="feedback">Geribildirim Gönder</string>
   <string name="action_open_in_browser">Tarayıcıda aç</string>
   <string name="prefs_category_basic">Temel Ayarlar</string>
@@ -301,11 +310,11 @@
   <string name="pref_traktsummary">trakt.tv kimlik bilgilerinizi ekleyin veya düzenleyin</string>
   <string name="pref_autoaddshows">yeni trakt dizileri ekleyin</string>
   <string name="pref_autoaddshowssummary">dizileri trakt aktivite akışından otomatik olarak yükleyin</string>
-  <string name="licence_tvdb">Bu uygulama kullanılan veriler ve görseller CC BY-NC 4.0 lisansı altındaki TheTVDB verileridir.</string>
+  <string name="licence_tvdb">Bu uygulama kullanılan theTVDb verileri ve görselleri CC BY-NC 4.0 lisansı altındadır.</string>
   <string name="licence_themoviedb">Bu uygulama TMDb API\'si kullanmaktadır. TMDb ile doğrudan ilişkili, bağlantılı değildir.</string>
   <string name="licence_trakt">Bu uygulama trakt tarafından sağlanan veri ve görselleri kullanır.</string>
   <string name="about_open_source">SeriesGuide açık kaynak bilgisayar yazılımı kullanılarak oluşturulmuştur.</string>
-  <string name="licences_and_credits">Licences and credits</string>
+  <string name="licences_and_credits">Lisanslar ve Bilgiler</string>
   <string name="sort">Sırala</string>
   <string name="action_sort_ignore_articles">Metinleri yoksay</string>
   <string name="sort_order_latest_first">Önce en yenisi</string>
@@ -315,7 +324,7 @@
   <string name="sort_order_top_rated_first">En çok oy alanlar</string>
   <string name="sort_order_latest_first_dvd">Önce en yenisi (DVD)</string>
   <string name="sort_order_oldest_first_dvd">Önce en eskisi (DVD)</string>
-  <string name="pref_upcominglimit">Upcoming range</string>
+  <string name="pref_upcominglimit">Yaklaşan aralığı</string>
   <string name="upcoming_upto_now">Şu anda</string>
   <string name="upcoming_upto_one_day">bir gün</string>
   <string name="upcoming_upto_three_days">3 gün</string>
@@ -361,10 +370,10 @@
   <string name="import_warning">Mevcut şovlarımın, listelerimin ve filmlerimin silineceğini anlıyorum!</string>
   <string name="last_auto_backup">Son Otomatik Yedekleme: %s</string>
   <string name="restore_auto_backup">Otomatik Yedeklemeden Geri Yükle</string>
-  <string name="dataliberation_permission_missing">To backup or restore, allow access to your files.</string>
-  <string name="autobackup_permission_missing">To use auto backup, allow access to your files.</string>
-  <string name="autobackup_files_missing">To use auto backup, select valid backup files.</string>
-  <string name="no_file_selected">No file selected</string>
+  <string name="dataliberation_permission_missing">Yedeklemek veya geri yüklemek için dosyalarınıza erişime izin verin.</string>
+  <string name="autobackup_permission_missing">Otomatik yedekleme kullanmak için dosyalarınıza erişime izin verin.</string>
+  <string name="autobackup_files_missing">Otomatik yedeklemeyi kullanmak için geçerli yedekleme dosyaları seçin.</string>
+  <string name="no_file_selected">Seçilmiş dosya yok</string>
   <string name="action_select_file">Dosya seçin</string>
   <string name="backup_use_default_files">Varsayılan yedek dosyalarını kullan</string>
   <string name="get_started">Başlarken... </string>

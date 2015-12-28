@@ -454,9 +454,14 @@ public class MovieTools {
                 }
 
                 try {
+                    com.uwetrottmann.seriesguide.backend.movies.Movies moviesService
+                            = HexagonTools.getMoviesService(context);
+                    if (moviesService == null) {
+                        return false;
+                    }
+
                     com.uwetrottmann.seriesguide.backend.movies.Movies.Get request
-                            = HexagonTools.getMoviesService(context).get()
-                            .setLimit(MOVIES_MAX_BATCH_SIZE);
+                            = moviesService.get().setLimit(MOVIES_MAX_BATCH_SIZE);
                     if (hasMergedMovies) {
                         request.setUpdatedSince(lastSyncTime);
                     }
@@ -798,7 +803,7 @@ public class MovieTools {
                 MoviesService tmdbMovies, String languageCode, int movieTmdbId) {
             MovieDetails details = new MovieDetails();
 
-            // load ratings and release time from trakt
+            // load ratings from trakt
             Integer movieTraktId = lookupTraktId(traktSearch, movieTmdbId);
             if (movieTraktId != null) {
                 details.traktRatings(loadRatingsFromTrakt(traktMovies, movieTraktId));
@@ -875,7 +880,12 @@ public class MovieTools {
             movieList.setMovies(movies);
 
             try {
-                HexagonTools.getMoviesService(context).save(movieList).execute();
+                com.uwetrottmann.seriesguide.backend.movies.Movies moviesService
+                        = HexagonTools.getMoviesService(context);
+                if (moviesService == null) {
+                    return false;
+                }
+                moviesService.save(movieList).execute();
             } catch (IOException e) {
                 Timber.e(e, "toHexagon: failed to upload movies");
                 return false;

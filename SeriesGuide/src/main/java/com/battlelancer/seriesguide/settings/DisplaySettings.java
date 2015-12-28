@@ -29,6 +29,8 @@ import com.battlelancer.seriesguide.ui.ShowsActivity;
  */
 public class DisplaySettings {
 
+    public static final String LANGUAGE_EN = "en";
+
     public static final String KEY_THEME = "com.battlelancer.seriesguide.theme";
 
     public static final String KEY_LANGUAGE = "language";
@@ -83,9 +85,12 @@ public class DisplaySettings {
                 getString(KEY_THEME, "0");
     }
 
+    /**
+     * Two letter ISO 639-1 language code of the content language preferred by the user.
+     */
     public static String getContentLanguage(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
-                .getString(KEY_LANGUAGE, "en");
+                .getString(KEY_LANGUAGE, LANGUAGE_EN);
     }
 
     public static String getNumberFormat(Context context) {

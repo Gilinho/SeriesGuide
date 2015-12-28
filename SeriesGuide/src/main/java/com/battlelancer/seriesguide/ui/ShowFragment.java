@@ -16,6 +16,7 @@
 
 package com.battlelancer.seriesguide.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -26,6 +27,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -34,19 +36,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.battlelancer.seriesguide.R;
 import com.battlelancer.seriesguide.loaders.ShowCreditsLoader;
 import com.battlelancer.seriesguide.provider.SeriesGuideContract.ListItemTypes;
+import com.battlelancer.seriesguide.settings.DisplaySettings;
 import com.battlelancer.seriesguide.settings.TraktCredentials;
 import com.battlelancer.seriesguide.thetvdbapi.TheTVDB;
 import com.battlelancer.seriesguide.ui.dialogs.ManageListsDialogFragment;
 import com.battlelancer.seriesguide.ui.dialogs.RateDialogFragment;
+import com.battlelancer.seriesguide.util.LanguageTools;
 import com.battlelancer.seriesguide.util.PeopleListHelper;
 import com.battlelancer.seriesguide.util.ServiceUtils;
 import com.battlelancer.seriesguide.util.ShareUtils;
@@ -60,11 +67,13 @@ import com.uwetrottmann.androidutils.AndroidUtils;
 import com.uwetrottmann.androidutils.CheatSheet;
 import com.uwetrottmann.tmdb.entities.Credits;
 import java.util.Date;
+import timber.log.Timber;
 
 import static com.battlelancer.seriesguide.provider.SeriesGuideContract.Shows;
 
 /**
- *
+ * Displays extended information (poster, release info, description, ...) and actions (favoriting,
+ * shortcut) for a particular show.
  */
 public class ShowFragment extends Fragment {
 
@@ -94,6 +103,7 @@ public class ShowFragment extends Fragment {
     @Bind(R.id.textViewShowRuntime) TextView mTextViewRuntime;
     @Bind(R.id.textViewShowNetwork) TextView mTextViewNetwork;
     @Bind(R.id.textViewShowOverview) TextView mTextViewOverview;
+    @Bind(R.id.spinnerShowLanguage) Spinner mSpinnerLanguage;
     @Bind(R.id.textViewShowReleaseCountry) TextView mTextViewReleaseCountry;
     @Bind(R.id.textViewShowFirstAirdate) TextView mTextViewFirstRelease;
     @Bind(R.id.textViewShowContentRating) TextView mTextViewContentRating;
@@ -120,6 +130,7 @@ public class ShowFragment extends Fragment {
 
     private String mShowTitle;
     private String mShowPoster;
+    private int mSpinnerLastPosition;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -161,6 +172,12 @@ public class ShowFragment extends Fragment {
         TextView crewHeader = ButterKnife.findById(mCrewView, R.id.textViewPeopleHeader);
         crewHeader.setText(R.string.movie_crew);
         mCrewContainer = ButterKnife.findById(mCrewView, R.id.containerPeople);
+
+        // language chooser
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.languages, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinnerLanguage.setAdapter(adapter);
 
         return v;
     }
@@ -222,7 +239,8 @@ public class ShowFragment extends Fragment {
                 Shows.RATING_GLOBAL,
                 Shows.RATING_VOTES,
                 Shows.RATING_USER,
-                Shows.LASTEDIT
+                Shows.LASTEDIT,
+                Shows.LANGUAGE
         };
 
         int TITLE = 1;
@@ -244,6 +262,7 @@ public class ShowFragment extends Fragment {
         int RATING_VOTES = 17;
         int RATING_USER = 18;
         int LAST_EDIT_MS = 19;
+        int LANGUAGE = 20;
     }
 
     private LoaderCallbacks<Cursor> mShowLoaderCallbacks = new LoaderCallbacks<Cursor>() {
@@ -327,7 +346,48 @@ public class ShowFragment extends Fragment {
         });
 
         // overview
-        mTextViewOverview.setText(mShowCursor.getString(ShowQuery.OVERVIEW));
+        String overview = mShowCursor.getString(ShowQuery.OVERVIEW);
+        if (TextUtils.isEmpty(overview) && mShowCursor != null) {
+            // no description available, show no translation available message
+            mTextViewOverview.setText(getString(R.string.no_translation,
+                    LanguageTools.getLanguageStringForCode(getContext(),
+                            mShowCursor.getString(ShowQuery.LANGUAGE)),
+                    getString(R.string.tvdb)));
+        } else {
+            mTextViewOverview.setText(overview);
+        }
+
+        // language preferred for content
+        String languageCode = mShowCursor.getString(ShowQuery.LANGUAGE);
+        if (TextUtils.isEmpty(languageCode)) {
+            languageCode = DisplaySettings.getContentLanguage(getContext());
+        }
+        final String[] languageCodes = getResources().getStringArray(R.array.languageData);
+        for (int i = 0; i < languageCodes.length; i++) {
+            if (languageCodes[i].equals(languageCode)) {
+                mSpinnerLastPosition = i;
+                mSpinnerLanguage.setSelection(i, false);
+                break;
+            }
+        }
+        mSpinnerLanguage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == mSpinnerLastPosition) {
+                    // guard against firing after layout completes
+                    // still happening on custom ROMs despite workaround described at
+                    // http://stackoverflow.com/a/17336944/1000543
+                    return;
+                }
+                mSpinnerLastPosition = position;
+                changeShowLanguage(parent.getContext(), getShowTvdbId(), languageCodes[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // do nothing
+            }
+        });
 
         // country for release time calculation
         // show "unknown" if country is not supported
@@ -372,7 +432,7 @@ public class ShowFragment extends Fragment {
         ServiceUtils.setUpTvdbButton(getShowTvdbId(), mButtonTvdb, TAG);
 
         // trakt button
-        ServiceUtils.setUpTraktButton(getShowTvdbId(), mButtonTrakt, TAG);
+        ServiceUtils.setUpTraktShowButton(mButtonTrakt, getShowTvdbId(), TAG);
 
         // web search button
         ServiceUtils.setUpWebSearchButton(mShowTitle, mButtonWebSearch, TAG);
@@ -389,7 +449,6 @@ public class ShowFragment extends Fragment {
                                 .makeScaleUpAnimation(v, 0, 0, v.getWidth(), v.getHeight())
                                 .toBundle()
                 );
-                fireTrackerEvent("Shouts");
             }
         });
 
@@ -463,10 +522,6 @@ public class ShowFragment extends Fragment {
         }
     }
 
-    private void fireTrackerEvent(String label) {
-        Utils.trackAction(getActivity(), TAG, label);
-    }
-
     private int getShowTvdbId() {
         return getArguments().getInt(InitBundle.SHOW_TVDBID);
     }
@@ -475,7 +530,7 @@ public class ShowFragment extends Fragment {
         if (TraktCredentials.ensureCredentials(getActivity())) {
             RateDialogFragment rateDialog = RateDialogFragment.newInstanceShow(getShowTvdbId());
             rateDialog.show(getFragmentManager(), "ratedialog");
-            fireTrackerEvent("Rate (trakt)");
+            Utils.trackAction(getActivity(), TAG, "Rate (trakt)");
         }
     }
 
@@ -484,6 +539,11 @@ public class ShowFragment extends Fragment {
             mTraktTask = new TraktRatingsTask(getActivity(), getShowTvdbId());
             AndroidUtils.executeOnPool(mTraktTask);
         }
+    }
+
+    private static void changeShowLanguage(Context context, int showTvdbId, String languageCode) {
+        Timber.d("Changing show language to " + languageCode);
+        ShowTools.get(context).storeLanguage(showTvdbId, languageCode);
     }
 
     private void createShortcut() {
@@ -504,13 +564,13 @@ public class ShowFragment extends Fragment {
                 Intent.FLAG_ACTIVITY_NEW_TASK));
 
         // Analytics
-        fireTrackerEvent("Add to Homescreen");
+        Utils.trackAction(getActivity(), TAG, "Add to Homescreen");
     }
 
     private void shareShow() {
         if (mShowCursor != null) {
             ShareUtils.shareShow(getActivity(), getShowTvdbId(), mShowTitle);
-            fireTrackerEvent("Share");
+            Utils.trackAction(getActivity(), TAG, "Share");
         }
     }
 }
